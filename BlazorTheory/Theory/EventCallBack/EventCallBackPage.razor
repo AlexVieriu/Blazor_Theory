@@ -1,0 +1,20 @@
+﻿@page "/eventcallback"
+
+<h3>Base Comp</h3>
+<p>@baseParam1</p>
+<p>@baseParam2</p>
+
+<hr />
+
+<EventCallBackChildComp OnSendingParams="HandleEventCallBack" />
+
+@code {
+    private string baseParam1 = string.Empty;
+    private int baseParam2 = 0;
+
+    public void HandleEventCallBack(EventCallBackModel model)
+    {
+        baseParam1 = model.Param1;
+        baseParam2 = model.Param2;
+    }
+}
